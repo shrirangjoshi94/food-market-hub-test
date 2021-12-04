@@ -7,7 +7,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class User extends Model
+class Property extends Model
 {
     use HasFactory;
 
@@ -17,9 +17,8 @@ class User extends Model
      * @var string $fillable
      */
     protected $fillable = [
-        'first_name',
-        'last_name',
-        'phones',
+        'address_id',
+        'owners',
     ];
 
     /**
@@ -28,6 +27,6 @@ class User extends Model
      * @var array $casts
      */
     protected $casts = [
-        'phones' => 'array',
+        'owners' => 'array',
     ];
 }
