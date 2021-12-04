@@ -7,9 +7,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class User extends Model
+class Phone extends Model
 {
     use HasFactory;
+
+    /** @var array PHONE_TYPES */
+    const PHONE_TYPES = [
+        'mobile',
+        'home',
+        'work',
+    ];
 
     /**
      * The attributes that are mass assignable.
@@ -17,17 +24,7 @@ class User extends Model
      * @var string $fillable
      */
     protected $fillable = [
-        'first_name',
-        'last_name',
-        'phones',
-    ];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array $casts
-     */
-    protected $casts = [
-        'phones' => 'array',
+        'number',
+        'phone_type',
     ];
 }
